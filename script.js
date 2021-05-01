@@ -1,8 +1,10 @@
 // document.getElementById("display").innerHTML
+//*Clicks over to zero for first button press while switching to user input B, keeping the sum inside of the display window.
 
 var uiA = 0; //user input A
 var uiB = 0; //user input B
 var op = 0; //the operand
+var display = document.getElementById("display").innerHTML;
 var abSwitch = false; //whether to feed the calculation A or B, f:A t:B
 
 function allClear() {
@@ -19,13 +21,14 @@ function calculate() {
         document.getElementById("display").innerHTML = "Err"
     }else {
         if (op == 1){
-            document.getElementById("display").innerHTML = "" + (Number(uiA) + Number(uiB));
+            document.getElementById("display").innerHTML = Number(uiA) + Number(uiB);
+            display = 0;
         }else if (op == 2){
-            document.getElementById("display").innerHTML = "" + (Number(uiA) - Number(uiB));
+            document.getElementById("display").innerHTML = Number(uiA) - Number(uiB);
         }else if (op == 3){
-            document.getElementById("display").innerHTML = "" + (Number(uiA) * Number(uiB));
+            document.getElementById("display").innerHTML = Number(uiA) * Number(uiB);
         }else if (op == 4){
-            document.getElementById("display").innerHTML = "" + (Number(uiA) / Number(uiB));
+            document.getElementById("display").innerHTML = Number(uiA) / Number(uiB);
         }
         abSwitch = false;
     }
@@ -36,12 +39,10 @@ function clr() {
 }
 
 function press(key) {
-    let inputEnable = screenOverflow(); 
-
-    if (document.getElementById("display").innerHTML === '+' || '-' || '*' || '/'){
+    let inputEnable = screenOverflow();
+    if (abSwitch = false) {
         document.getElementById("display").innerHTML = 0;
     }
-
     if (inputEnable == true) {
         if (key == "." && document.getElementById("display").innerHTML.indexOf(".") == -1 ){
             document.getElementById("display").innerHTML = "" + document.getElementById("display").innerHTML + key;
@@ -67,7 +68,7 @@ function setOP(operation){
     if (abSwitch == false){
         uiA = document.getElementById("display").innerHTML
         abSwitch = true;
-        document.getElementById("display").innerHTML = operation;
+        clr()
     } else {
         calculate()
     }
