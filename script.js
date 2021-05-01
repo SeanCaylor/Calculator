@@ -1,5 +1,5 @@
 // document.getElementById("display").innerHTML
-//*Clicks over to zero for first button press while switching to user input B, keeping the sum inside of the display window.
+//*Clicks over to zero for first button press while switching to user input B, keeping the sum inside of the display window. Admittedly, its only a problem on numbers over 10 trillion
 
 var uiA = 0; //user input A
 var uiB = 0; //user input B

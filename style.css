@@ -56,14 +56,14 @@ button:active {
 }
 
 #display {
-    height: 50px;
-    font-size: auto;
+    max-height: 30%;
+    font-size: calc(.25rem + 1.75vw);
     text-align: right;
     background-color: whitesmoke;
     margin: 4% 2% 2% 2%;
     border: solid 2px #b6b4b4;
-    padding-right: 5%;
-    width: 88%;
+    padding: 3% 5%;
+    max-width: 88%;
     border-radius: 50px;
     margin-bottom: 4%;
 }
